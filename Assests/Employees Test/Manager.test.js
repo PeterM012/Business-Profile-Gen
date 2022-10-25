@@ -1,11 +1,11 @@
-const Manager = require('../Employees/Manager');
+const Manager = require('../Lib/Manager');
 const manager= new Manager('newPerson','newID','newEmail','newOfficeNumber');
 
 test('test constructors', () => {
     expect(manager.name).toBe('newPerson');
     expect(manager.id).toBe('newId');
-    expect(manager.name).toBe('newEmail');
-    expect(manager.name).toBe('newOfficeNumber');
+    expect(manager.email).toBe('newEmail');
+    expect(manager.officeNumber).toBe('newOfficeNumber');
 });
 
 test('test getName()', () => {

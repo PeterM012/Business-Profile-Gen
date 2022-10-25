@@ -1,4 +1,4 @@
-const Employee = require('../Employees/Employee');
+const Employee = require('../Lib/Employee');
 const employee = new Employee('newPerson','newID','newEmail');
 
 test('test constructors', () => {

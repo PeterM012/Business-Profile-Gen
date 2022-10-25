@@ -1,11 +1,11 @@
-const Engineer = require('../Employees/Engineer');
+const Engineer = require('../Lib/Engineer');
 const engineer= new Engineer('newPerson','newID','newEmail','newGitHub');
 
 test('test constructors', () => {
     expect(engineer.name).toBe('newPerson');
     expect(engineer.id).toBe('newId');
-    expect(engineer.name).toBe('newEmail');
-    expect(engineer.name).toBe('newGitHub');
+    expect(engineer.email).toBe('newEmail');
+    expect(engineer.gitHub).toBe('newGitHub');
 });
 
 test('test getName()', () => {
