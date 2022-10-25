@@ -22,9 +22,11 @@ let output = `<!DOCTYPE html>
 
 for(const member of members) {
   output +=
-  `<div class="card border-dark shadow bg-body rounded" style="max-width: 18rem;">
-    <h2 class="card-header text-white text-bg-primary p-3">${member.getName()}</h2>
-    <h3 class="text-white text-bg-primary p-3 fw-light">${member.getRole()}</h3>
+  `<div class="card border-dark shadow bg-dark rounded" style="max-width: 18rem;">
+    <div class="card-body bg-dark rounded">
+    <h2 class="card-header text-white text-bg-dark p-3">${member.getName()}</h2>
+    <div class="card-body bg-light rounded">
+    <h3 class="text-white text-bg-dark p-3 fw-light">${member.getRole()}</h3>
     <ul class="card list-group list-group-flush p-3">
     <li class="list-group-item">ID: ${member.getId()}</li>
     <li class="list-group-item">Email: <a href="${member.getEmail()}">${member.getEmail()}</a></li>
@@ -46,7 +48,9 @@ for(const member of members) {
   : ``;
 
   output += 
-   `</ul>
+    `</ul>
+    </div>
+   </div>
   </div>
   `
 }
