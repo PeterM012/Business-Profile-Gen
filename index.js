@@ -5,59 +5,62 @@ const Intern = require('./Lib/Intern.js');
 const Manager = require('./Lib/Manager.js');
 
 function generateHTML(members) {
-  // fs.writeFile('index.html', htmlPageContent, (err) =>
-  //   err ? console.log(err) : console.log('Successfully created index.html!')
-  // );
+
 
 let output = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.2.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <title>Profile GenPro</title>
 </head>
 <body>
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid"> My Team </div>
   <div class="container d-flex">
   `
 
 for(const member of members) {
   output +=
-  `<div>
+  `<div class="card" style="width: 18rem;">
     <h2>${member.getName()}</h2>
-    <h2>${member.getRole()}</h2>
-    <ul>
-    <li>ID: ${member.getId()}</li>
-    <li>Email: <a href=${member.getEmail()}>${member.getEmail()}</a></li>
+    <h3>${member.getRole()}</h3>
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">ID: ${member.getId()}</li>
+    <li class="list-group-item">Email: <a href="${member.getEmail()}">${member.getEmail()}</a></li>
     `
 
   output += (member instanceof Manager) ?
-   `<li>Office Number:${member.getOfficeNumber()}</li>
+   `<li class="list-group-item">Office Number:${member.getOfficeNumber()}</li>
    `
    : ``;
     
   output += (member instanceof Engineer) ?
-   `<li>GitHub: <a href="https://github.com/${member.getGithub()}">${member.getGithub()}</a></li>
+   `<li class="list-group-item">GitHub: <a href="https://github.com/${member.getGithub()}">${member.getGithub()}</a></li>
    `
   : ``;
 
   output += (member instanceof Intern) ?
-   `<li>School: ${member.getSchool()}</li>
+   `<li class="list-group-item">School: ${member.getSchool()}</li>
    `
   : ``;
 
+  output += 
    `</ul>
   </div>
   `
 }
 
 output += 
-` </div>
-</div>
+`</div>
 </body>
 </html>`;
+
 console.log(output);
+
+fs.writeFile('./dist/index.html', output, (err) =>
+  err ? console.log(err) : console.log('Successfully created index.html!')
+);
 }
 
 async function PromptUserInput() {
