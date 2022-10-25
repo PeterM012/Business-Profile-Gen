@@ -16,16 +16,16 @@ let output = `<!DOCTYPE html>
   <title>Profile GenPro</title>
 </head>
 <body>
-  <div class="jumbotron jumbotron-fluid"> My Team </div>
-  <div class="container d-flex">
+  <div class="jumbotron jumbotron-fluid p-3 mb-2 bg-danger text-white text-center fs-1 fw-bold"> My Team </div>
+  <div class="row row-cols-1 row-cols-md-3 p-5 g-4 gap-5 row justify-content-center">
   `
 
 for(const member of members) {
   output +=
-  `<div class="card" style="width: 18rem;">
-    <h2>${member.getName()}</h2>
-    <h3>${member.getRole()}</h3>
-    <ul class="list-group list-group-flush">
+  `<div class="card border-dark shadow bg-body rounded" style="max-width: 18rem;">
+    <h2 class="card-header text-white text-bg-primary p-3">${member.getName()}</h2>
+    <h3 class="text-white text-bg-primary p-3 fw-light">${member.getRole()}</h3>
+    <ul class="card list-group list-group-flush p-3">
     <li class="list-group-item">ID: ${member.getId()}</li>
     <li class="list-group-item">Email: <a href="${member.getEmail()}">${member.getEmail()}</a></li>
     `
