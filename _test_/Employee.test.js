@@ -1,3 +1,4 @@
+//Displays the test when calling on Jest
 const Employee = require('../Lib/Employee.js');
 const employee = new Employee('newPerson','newId','newEmail');
 

@@ -1,3 +1,4 @@
+//Displays the test when calling on Jest
 const Manager = require('../Lib/Manager.js');
 const manager= new Manager('newPerson','newId','newEmail','newOfficeNumber');
 

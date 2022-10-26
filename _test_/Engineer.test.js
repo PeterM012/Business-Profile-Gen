@@ -1,3 +1,4 @@
+//Displays the test when calling on Jest
 const Engineer = require('../Lib/Engineer.js');
 const engineer= new Engineer('newPerson','newId','newEmail','newGitHub');
 

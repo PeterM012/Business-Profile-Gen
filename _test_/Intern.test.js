@@ -1,3 +1,4 @@
+//Displays the test when calling on Jest
 const Intern = require('../Lib/Intern.js');
 const intern= new Intern('newPerson','newId','newEmail','newSchool');
 
