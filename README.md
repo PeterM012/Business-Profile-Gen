@@ -1,7 +1,7 @@
 # Business-Profile-Gen
 
 ## Video Link
-https://drive.google.com/file/d/1qaOI2iJRnSTS9CNvqa9LfrSGVCky2_Ss/view
+https://drive.google.com/file/d/1_vg88QShJR7-6Og8DtE_qUSlt6f1Aq2-/view
 
 ## Technologies Used
 - JS - Used to create interactions and animations on webpage
